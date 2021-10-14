@@ -1,0 +1,76 @@
+Uloha 1
+
+```{r}
+combin <- function(n,k)
+{
+  if (n<k)
+    return("Chyba, n musi byt väčšie ako k")
+  else
+    return(factorial(n) / factorial(n-k) / factorial(k))
+}
+
+combin(5,1)
+combin(5,2)
+```
+
+Uloha 2
+
+Riesenie c.1:
+```{r}
+odmocni<-function(n,k)
+  return(n^k)
+
+odmocni(25,0.5)
+odmocni(100,0.5)
+odmocni(7,0.5)
+```
+Riesenie c.2:
+
+```{r}
+odmocnina<-function(x)
+{
+a <- 2
+eps <- 1e-10
+
+while (abs(a * a - x) > eps)
+  {
+  a <- 0.5 * (a + x/a)
+  }
+
+return(a)
+}
+
+odmocnina(144)
+odmocnina(7)
+odmocnina(16)
+
+```
+Uloha 3
+
+
+```{r}
+
+integ <- function(f, a, b)
+{f <- function(x){2*x+3*x^2}
+return(integrate(f, lower = a, upper = b))
+}
+integ(2*x+3*x^2,0,2)
+
+```
+Uloha 4
+
+```{r}
+library(stringi)
+clear.dia <- function(s)
+
+  { 
+  stri_trans_general(s, "Latin-ASCII")
+  }
+  
+  clear.dia("čaj, káva, čokoláda")
+
+```
+
+
+
+
